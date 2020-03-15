@@ -1,0 +1,208 @@
+<html>
+	<head>  <meta charset="utf-8">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta name="description" content="Esta es la descripción de mi sitio web">
+	  <meta name="keywords" content="comunidad mac, mision mac, mision jem, pescador, musica, ministerio, demos mas, jovenes, Dios, Jesus, Maria">
+	  <meta name="robots" content="NOINDEX, NOFOLLOW">
+	  <meta name="author" content="Cinthya">
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<title>Comunidad MAC</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<header>
+
+			<nav id="navbar">
+			<div class="container">
+				 <h1 class="logo" title= "Comunidad MAC"><a href="/index.html">Comunidad Mac</a></h1>
+
+		<div id="header">
+
+        <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+				<ul class="nav">
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="/comunidad.html">¿Quienes Somos?</a>
+						<ul>
+							<li><a href="mmac.html">Misión MAC</a></li>
+							<li><a href="mjem.html">Misión JEM</a></li>
+							<li><a href="pescador.html">Pescador</a></li>
+
+
+						</ul>
+						<li><a href="calendario.html">Calendario</a>
+
+					</li>
+          <li><a href="">Más</a>
+					<ul>
+						<li><a href="contacto.html">Contacto</a></li>
+						<li><a href="neveria.html">Neveria</a></li>
+						<li><a href="video.html">Video</a></li>
+          </ul>
+				</li>
+			</nav>
+      <body>
+				<center>  <h2>Más Info</h2>
+
+ 				     <script>
+
+ 				     var nombreOk=false;
+ 				     var apellidoOk=false;
+ 				     var edadOk=false;
+ 				     var emailOk=false;
+
+ 				     window.onload=function(){
+ 				         var everyInputs=document.getElementsByTagName('input');
+ 				         for (var i=0;i<(everyInputs.length);i++){
+ 				             everyInputs[i].addEventListener('focus',estilo);
+ 				             everyInputs[i].addEventListener('blur',estilo2);
+ 				             var nodoname=everyInputs[i].name;
+
+ 				             switch (nodoname){
+ 				                     case "nombre":
+ 				                         everyInputs[i].addEventListener('blur',validarNombre);
+ 				                         break;
+ 				                     case "apellido":
+ 				                          everyInputs[i].addEventListener('blur',validarApellido);
+ 				                         break;
+ 				                     case "edad":
+ 				                         everyInputs[i].addEventListener('blur',validarEdad);
+ 				                         break;
+ 				                     case "email":
+ 				                         everyInputs[i].addEventListener('blur',validarEmail);
+ 				                         break;
+ 				                     default :break;
+ 				                 }
+ 				         }
+ 				     function estilo(){
+ 				         this.style.backgroundColor="lightgray";
+ 				     }
+ 				     function estilo2(inputElement){
+ 				         this.style.background='transparent';
+ 				         this.nextSibling.src="check.png";
+ 				     }
+ 				     function estiloRojo(inElement){
+ 				         inElement.style.backgroundColor="lightyellow";
+ 				         inElement.nextSibling.src="check.png";
+ 				     }
+
+ 				     function validarNombre(){
+ 				             var nombre=document.getElementById("nombre");
+ 				             var expresionRegular=/^\w{3,}$/;
+ 				             if ((expresionRegular.test(nombre.value))==true){
+ 				                 nombreOk=true;
+ 				                 estilo2(nombre);
+ 				             }
+ 				             else {
+ 				                 nombreOk=false;
+ 				                 estiloRojo(nombre);
+ 				             }
+
+ 				     }
+
+ 				     function validarApellido(){
+ 				             var apellido=document.getElementById("apellido");
+ 				             var expresionRegular=/^\w{3,}$/;
+ 				             if ((expresionRegular.test(apellido.value))==true){
+ 				                 apellidoOk=true;
+ 				                 estilo2(apellido);
+ 				             }
+ 				             else {
+ 				                 apellidoOk=false;
+ 				                 estiloRojo(apellido);
+ 				             }
+
+ 				     }
+
+ 				     function validarEdad(){
+ 				         var edad=document.getElementById("edad");
+ 				         if ((edad.value>10) && (edad.value<99)){
+ 				             edadOk=true;
+ 				             estilo2(edad);
+ 				         }
+ 				         else {
+ 				             edadOk=false;
+ 				             estiloRojo(edad);
+ 				         }
+
+ 				     }
+
+ 				     function validarEmail(){
+ 				         var valorEmail=document.getElementById("email");
+ 				         var expresionRegular=/^([\w-\.]{3,}\@.+\..+)$/;
+ 				         var email=convertirMinusculas(valorEmail.value);
+ 				         email=comprobarAtEmail(email);
+ 				         if ((expresionRegular.test(email))==true) {
+ 				             emailOk=true;
+ 				             estilo2(valorEmail);
+ 				     	}
+ 				     	else {
+ 				             emailOk=false;
+ 				     		estiloRojo(valorEmail);
+ 				     	}
+
+ 				     }
+
+
+ 				     function convertirMinusculas(email){
+ 				         return email.toLowerCase();
+ 				         }
+
+ 				     function comprobarAtEmail(email){
+ 				         var expresion=/\sat\s/g;
+ 				         return email.replace(expresion,'@');
+ 				     }
+
+ 				         }
+ 				     function validarDatos(){
+ 				         var msg='Los datos que debe rectificar son:';
+ 				         if (nombreOk && apellidoOk && edadOk && emailOk){
+ 				             alert ("Ha introducido todos los datos correctamente y su formulario va a ser enviado");
+ 				             return true;
+ 				         }else{
+ 				             if (nombreOk===false){
+ 				                 msg = msg + ' nombre ';
+ 				             }
+ 				             if (apellidoOk===false){
+ 				                 msg = msg + ' apellido ';
+ 				             }
+ 				             if (edadOk===false){
+ 				                 msg = msg + ' edad ';
+ 				             }
+ 				             if (emailOk===false){
+ 				                 msg = msg + ' email ';
+ 				             }
+ 				             alert (msg);
+ 				             return false;
+ 				         }
+ 				     }
+
+ 				     </script>
+ 				     <body>
+ 				       <br>
+ 				       <hr>
+ 				       <br><br>
+ 				         <h1>Contáctanos</h1>
+ 				         <br>
+ 				         <p>Por favor, llena la forma para contactarnos</p>
+
+ 				         <img id="img1" src="CMac.png"  height="500px" />
+ 				     <form name="miniformualario" class="formulario" method="get" onsubmit="return validarDatos()">
+ 				     <label>Escriba su nombre</label>
+ 				     <input type="text" id="nombre" name="nombre"/><img width="10" height="10"/><br/>
+ 				     <label>Apellidos</label>
+ 				     <input type="text" id="apellido" name="apellido"/><img width="10" height="10"/><br/>
+ 				     <label>Edad</label>
+ 				     <input type="text" id="edad" name="edad"/><img width="10" height="10"/><br/>
+ 				     <label>Correo electrónico</label>
+ 				     <input type="text" id="email" name="email"/><img width="10" height="10"/><br/><br/>
+ 				     <input type="submit"  value="Enviar" />
+ 				     <input type="reset" value="Reiniciar datos" />
+
+ 				     </form>
+							<footer id="main-footer">
+						<p>Cgarza &copy; 2020, Todos los Derechos Reservados</p>
+					</footer>
+
+        </body>
+        </html>

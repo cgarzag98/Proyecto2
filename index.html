@@ -1,0 +1,150 @@
+<html>
+	<head>  <meta charset="utf-8">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta name="description" content="Esta es la descripción de mi sitio web">
+	  <meta name="keywords" content="comunidad mac, mision mac, mision jem, pescador, musica, ministerio, demos mas, jovenes, Dios, Jesus, Maria">
+	  <meta name="robots" content="NOINDEX, NOFOLLOW">
+	  <meta name="author" content="Cinthya">
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<title>Comunidad MAC</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script src="./js/jquery-3.4.1.js"></script>
+
+	</head>
+	<body>
+		<header>
+			<script>
+		    //Deshabilitar el boton derecho del raton
+		    document.oncontextmenu=function(){
+		      return false
+		    }
+		    function boton_derecho(e){
+		      var msg="Lo sentimos, el boton derecho del raton esta deshabilitado";
+		      if(navigator.appName=='Netscape'&& e.which==3){
+		        alert(msg);
+		        return false;
+		      }
+
+		      else if(navigator.appName=='Microsoft Internet Explorer'&& event.button==2){
+		        alert(msg);
+		        return false;
+		      }
+		       return false;
+		     }
+
+
+		    document.onmousedown =boton_derecho;
+		    </script>
+
+			<nav id="navbar">
+			<div class="container">
+				 <h1 class="logo" title= "Comunidad MAC"><a href="/index.html">Comunidad Mac</a></h1>
+
+		<div id="header">
+
+        <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+				<ul class="nav">
+					<li><a href="/index.html">Inicio</a></li>
+					<li><a href="./comunidad.html">¿Quienes Somos?</a>
+						<ul>
+							<li><a href="mmac.html">Misión MAC</a></li>
+							<li><a href="mjem.html">Misión JEM</a></li>
+							<li><a href="pescador.html">Pescador</a></li>
+
+						</ul>
+								<li><a href="calendario.html">Calendario</a>
+
+							</li>
+						<li><a href="">Más</a>
+						<ul>
+						<li><a href="contacto.html">Contacto</a></li>
+						<li><a href="neveria.html">Neveria</a></li>
+						<li><a href="video.html">Video</a></li>
+						</ul>
+						</li>
+						</nav>
+
+	  <div id="welcome"></div>
+		<script>
+		 var imagenes=new Array(
+		 'CMac.png',
+		 'mision.png',
+		 'accion.png',
+		'cambio.png',
+
+		 );
+		 function rotarImagenes()
+			{
+				var index=Math.floor((Math.random(1)*imagenes.length));
+				document.getElementById("imagen").src=imagenes[index];
+			}
+			onload=function()
+			{
+				rotarImagenes();
+				setInterval(rotarImagenes,1000);
+
+			}
+			</script>
+
+				<img src="" id="imagen" height="750px">
+
+		</header>
+
+			<section id="features">
+         <div class="box bg-light">
+					 <center>
+
+
+           <h3>MISIÓN</h3>
+           <p>Tenemos como misión ser mensajeros de Dios</p>
+         </div>
+         <div class="box bg.dark">
+					 </center>
+  <center>
+           <h3>ACCIÓN</h3>
+           <p>A traves de nuestro voluntariado hacerlo conocer</p>
+           </div>
+				 </center>
+				 <center>
+           <div class="box bg.light1">
+           <h3>CAMBIO</h3>
+             <p>Ser un cambio para el mundo  </p>
+
+						 <section id="home-info2" class="bg-dark">
+
+
+						   <div class="info-content2">
+
+						     <h2>
+						       <span class="text-primary3">Historia de la Comunidad</span>
+						     </h2>
+						     <style type="text/css">
+						     .oculto { display: none; }
+						     .visible {display: inline; }
+						     </style>
+						     <p><span class="text-primary3"> La Comunidad MAC nace hace 6 años.</span></p>
+						     <p id="parrafo17"><span class="text-primary3">La comunidad nace, a partir de unas misiones
+									 donde: Alán Escobar, Aline Escobar, Diego Hernández, Roberto Zavala y Alberto Castillo... <span id="adicional" class="oculto">  decidieron comenzar
+									 un grupo donde los adolescentes pudieran conocer a Jesús a traves de una comunidad, ser discipulos en el mundo
+								 ser hermanos, ser familia.
+							 Despues de 3 años comenzó Misión JEM  que es para universitario....</span></p>
+						         <a id="enlace" href="#" onclick="muestra(); return false;">Seguir leyendo</a></span>
+
+
+
+
+						 </div>
+
+						 </section>
+
+					 <body>
+
+
+							<footer id="main-footer">
+						<p>Cgarza &copy; 2020, Todos los Derechos Reservados</p>
+						</footer>
+ <script src="./js/colores.js"></script>
+ <script src="./js/ocultar.js"></script>
+				 </body>
+				 </html>
